@@ -1,3 +1,5 @@
+ /* Instead of having one giant array (followers), we then have array of arrays (newFollowers) */
+ 
 const paginate = (followers) => {
   const itemsPerPage = 10
   const numberOfPages = Math.ceil(followers.length / itemsPerPage)

@@ -9,6 +9,7 @@ export const useFetch = () => {
   const getProducts = async () => {
     const response = await fetch(url)
     const data = await response.json()
+    /* setting the array of arrays coming out from the paginate function to the state */ 
     setData(paginate(data))
     setLoading(false)
   }

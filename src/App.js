@@ -2,14 +2,20 @@ import React, { useState, useEffect } from 'react'
 import { useFetch } from './useFetch'
 import Follower from './Follower'
 function App() {
+
+  // using the custom hook to fetch data
   const { loading, data } = useFetch()
+
+  /*  the curret page of the pagination */
   const [page, setPage] = useState(0)
+
+  /* the list that should be shown in one page */
   const [followers, setFollowers] = useState([])
 
   useEffect(() => {
     if (loading) return
     setFollowers(data[page])
-  }, [loading, page])
+  }, [data, loading, page])
 
   const nextPage = () => {
     setPage((oldPage) => {
